@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Convertor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/nice-select2.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/convertor.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container">
+
+        <a href="#" class="header__logo">
+            <img src="img/logo.svg">
+        </a>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="gradient.html" class="header__link">Генератор градієнтів</a>
+                </li>
+                <li class="header__item">
+                    <a href="convertor.html" class="header__link header__link_active">Конвертер файлів</a>
+                </li>
+                <li class="header__item">
+                    <a href="url-shortener.html" class="header__link">Скорочувач посилань</a>
+                </li>
+                <li class="header__item">
+                    <a href="news.html" class="header__link">ІТ Новини</a>
+                </li>
+                <li class="header__item">
+                    <a href="contests.html" class="header__link">ІТ Змагання</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="header__menu-btn">
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+  <main>
+    <section class="drop">
+      <div class="container">
+
+        
+
+        <div class="drop-controls" >
+          <form class="drop-controls__form" id="form" enctype="multipart/form-data">
+            <div class="drop-zone">
+              <img src="img/layer1.png" alt="cloud" class="drop-zone__img">
+              <span class="drop-zone__prompt">Drag&Drop file here</span>
+              <input accept="png, jpg, webp" type="file" name="File" class="drop-zone__input">
+            </div>
+          </form>
+
+          <div class="drop-controls__select-container">
+            <div class="drop-controls__select-block">
+              <h3 class="drop-controls__title">Конвертувати в</h3>
+              <select name="file" id="toInput" class="drop-controls__select">
+                <option value="jpg" class="drop-controls__select-option">jpg</option>
+                <option value="png" class="drop-controls__select-option">png</option>
+                <option value="webp" class="drop-controls__select-option">webp</option>
+              </select> 
+            </div>
+            <button type="submit" class="drop-controls__btn" form="form">Конвертувати</button>
+          </div>
+        </div>
+        <img src="img/loader.gif" class="loader" style="display: none;">
+
+        <div class="converted-container">
+          <img src="" id="img" class="drop-zone drop-controls converted-container__img">
+          <h2 class="converted-container__title">Дякую за користування нашим сайтом</h2>
+          <a href="" id="link" download="converted" class="converted-container__download-link">Завантажити файл</a>
+        </div>
+        
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+        <p class="footer__copy">&copy; 2022 всі права зареєстровані</p>
+        <a href="#" class="footer__socials-link">
+            <img src="img/github.svg" class="footer__socials-img">
+        </a>
+
+    </div>
+  </footer>
+
+ 
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="nice-select2.js"></script>
+  <script src="convertor.js"></script>
+</body>
+</html>

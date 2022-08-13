@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="header__logo">
+                <img src="img/logo.svg">
+            </a>
+            <nav class="header__menu">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="gradient.html" class="header__link">Генератор градієнтів</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="convertor.html" class="header__link">Конвертер файлів</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="url-shortener.html" class="header__link">Скорочувач посилань</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="news.html" class="header__link">ІТ Новини</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="contests.html" class="header__link">ІТ Змагання</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__menu-btn">
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title">Проект “IT хаб”</h1>
+            <p class="hero__subtitle">Розроблений учнями онлайн-школи GoITeens Духота Владислав і Межевий Владислав. <br> На нашому сайті є корисні інструменти для веб-розробників, такі як: </p>
+                <ul class="hero__list">
+                    <li class="hero__item">
+                        генератор градієнтів
+                    </li>
+                    <li class="hero__item"> 
+                        конвертер файлів
+                    </li>
+                    <li class="hero__item">
+                        скорочувач посилань 
+                    </li>
+                    <li class="hero__item">
+                        ІТ новини
+                    </li>
+                    <li class="hero__item">
+                        ІТ змагання
+                    </li>
+                </ul>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__copy">&copy; 2022 всі права зареєстровані</p>
+            <a href="#" class="footer__socials-link">
+                <img src="img/github.svg" class="footer__socials-img">
+            </a>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.querySelector('.header__menu-btn');
+        const menu = document.querySelector('.header__menu');
+        menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('header__menu-btn_active');
+        menu.classList.toggle('header__menu_active');
+        });
+    </script>
+</body>
+</html>

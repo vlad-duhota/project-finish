@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/url-shortener.css">
+  <title>Url Shortener</title>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+
+        <a href="#" class="header__logo">
+            <img src="img/logo.svg">
+        </a>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="gradient.html" class="header__link">Генератор градієнтів</a>
+                </li>
+                <li class="header__item">
+                    <a href="convertor.html" class="header__link">Конвертер файлів</a>
+                </li>
+                <li class="header__item">
+                    <a href="url-shortener.html" class="header__link header__link_active">Скорочувач посилань</a>
+                </li>
+                <li class="header__item">
+                    <a href="news.html" class="header__link">ІТ Новини</a>
+                </li>
+                <li class="header__item">
+                    <a href="convertor.html" class="header__link">ІТ Змагання</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="header__menu-btn">
+            <span></span>
+        </button>
+
+    </div>
+  </header>
+
+  
+  <div class="copy-alert"><p>Текст скопійовано</p></div>
+
+  <main>
+    <section class="url-shortener">
+      <div class="container">
+
+        
+        <div class="url-shortener__container">
+          <form class="url-shortener__form" id="url-form-id">
+  
+            <label for="url-field" class="url-shortener__title">Вставте посилання</label>
+            <div class="url-shortener__form-container">
+              <input type="url" name="" id="url-field" class="url-shortener__form-field">
+              <button type="submit" class="url-shortener__btn"><img src="img/url-shortener-arrow.svg" alt="arrow"></button>
+            </div>
+  
+          </form>
+        </div>
+
+        <div class="url-shortened__container url-shortener__container">
+          <form class="url-shortener__form">
+
+            <label for="url-field" class="url-shortener__title">Скорочене посилання</label>
+            <div class="url-shortener__form-container">
+
+              <input type="url" name="url-input" id="url-field" class="url-shortened__form-field  url-shortener__form-field" readonly value="">
+              
+              <button type="button" class="url-shortener__btn" id="url-btn"><img src="img/url-shortener-copy.svg" alt="copy"></button>
+
+            </div>
+
+          </form>
+        </div>
+  
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+
+        <p class="footer__copy">&copy; 2022 всі права зареєстровані</p>
+        <a href="#" class="footer__socials-link">
+            <img src="img/github.svg" class="footer__socials-img">
+        </a>
+
+    </div>
+  </footer>
+
+  <script src="clipboard.min.js"></script>
+  <script src="url-shortener.js"></script>
+</body>
+</html>
+
+<!-- 
+
+  
+          <input type="url" readonly>
+
+<form class="url-shortener__form" id="url-form-id">
+
+  <label for="url-input">Введіть посилання</label>
+  <input type="url" name="url" id="url-input" required >
+
+  <input type="submit" value="submit">
+
+</form> -->

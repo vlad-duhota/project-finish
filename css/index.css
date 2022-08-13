@@ -1,0 +1,39 @@
+.hero {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .container {
+  width: 100%;
+}
+
+.hero__title {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.hero__list {
+  padding: 15px;
+  border-radius: 15px;
+  background: #445;
+  max-width: 578px;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-top: 10px;
+}
+
+.hero__item {
+  text-transform: uppercase;
+  font-family: 'Fira Sans', serif;
+}
+
+.hero__item:not(:last-child) {
+  margin-bottom: 20px;
+}

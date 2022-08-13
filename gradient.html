@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gradient.css">
+</head>
+
+<body>
+    <header class="header">
+    <div class="container">
+        <a href="#" class="header__logo">
+            <img src="img/logo.svg">
+        </a>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="gradient.html" class="header__link header__link_active">Генератор градієнтів</a>
+                </li>
+                <li class="header__item">
+                    <a href="convertor.html" class="header__link">Конвертер файлів</a>
+                </li>
+                <li class="header__item">
+                    <a href="url-shortener.html" class="header__link">Скорочувач посилань</a>
+                </li>
+                <li class="header__item">
+                    <a href="news.html" class="header__link">ІТ Новини</a>
+                </li>
+                <li class="header__item">
+                    <a href="contests.html" class="header__link">ІТ Змагання</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="header__menu-btn">
+            <span></span>
+        </button>
+    </div>
+</header>
+    <section class="hero">
+        <div class="container">
+            <div class="hero__controls">
+                <div class="hero__counter" style="opacity: .35;">
+                    <button class="hero__counter-btn hero__counter-btn_1">-</button>
+                    <p class="hero__counter-current">5</p>
+                    <button class="hero__counter-btn hero__counter-btn_2" style="opacity: 0.35;">+</button>
+                </div>
+                <h1 class="hero__title">Створювач Градієнтів</h1>
+                <div class="hero__inputs">
+                    <input type="color" class="hero__color-input hero__color-input_1">
+                    <input type="color" class="hero__color-input hero__color-input_2" style="display: none;">
+                </div>
+            </div>
+            <div class="hero__cols">
+                <ul class="hero__colors-list">
+                    <li class="hero__colors-item">
+                        <button class="hero__colors-item-btn_1 hero__colors-item-btn" style="display: none;">
+                            <</button>
+                                <button class="hero__colors-item-btn_2 hero__colors-item-btn">></button>
+                    </li>
+                    <li class="hero__colors-item">
+                        <button class="hero__colors-item-btn_1 hero__colors-item-btn">
+                            <</button>
+                                <button class="hero__colors-item-btn_2 hero__colors-item-btn">></button>
+                    </li>
+                    <li class="hero__colors-item">
+                        <button class="hero__colors-item-btn_1 hero__colors-item-btn">
+                            <</button>
+                                <button class="hero__colors-item-btn_2 hero__colors-item-btn">></button>
+                    </li>
+                    <li class="hero__colors-item">
+                        <button class="hero__colors-item-btn_1 hero__colors-item-btn">
+                            <</button>
+                                <button class="hero__colors-item-btn_2 hero__colors-item-btn">></button>
+                    </li>
+                    <li class="hero__colors-item">
+                        <button class="hero__colors-item-btn_1 hero__colors-item-btn">
+                            <</button>
+                                <button class="hero__colors-item-btn_2 hero__colors-item-btn"
+                                    style="display: none;">></button>
+                    </li>
+                </ul>
+                <div class="hero__gradient"></div>
+            </div>
+            <div class="hero__controls">
+                <button class="hero__repeat-btn" style="opacity: .35;"><img src="img/repeat.svg"></button>
+                <p class="hero__status">Будь ласка оберіть колір</p>
+                <div class="hero__modes">
+                    <button class="hero__modes-btn hero__modes-btn_1">Режим 1</button>
+                    <button class="hero__modes-btn hero__modes-btn_2" style="opacity: .5;">Режим 2</button>
+                </div>
+            </div>
+            <button class="hero__open-btn" disabled style="opacity: .35;">Отримати кольори</button>
+        </div>
+    </section>
+    <div class="pop-up">
+        <div class="pop-up__body">
+            <h2 class="pop-up__title">Дякуємо за використання нашого сайту</h2>
+            <p class="pop-up__text">css-gradient: <span>linear-gradient()</span></p>
+            <ul class="pop-up__colors-list">
+            </ul>
+            <button class="pop-up__close-btn"><span>+</span></button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__copy">&copy; 2022 всі права зареєстровані</p>
+            <a href="#" class="footer__socials-link">
+                <img src="img/github.svg" class="footer__socials-img">
+            </a>
+        </div>
+    </footer>
+    <script src="gradient.js"></script>
+</body>
+
+</html>
