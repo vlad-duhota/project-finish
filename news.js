@@ -1,7 +1,8 @@
 const form = document.querySelector('#form');
 const input = document.querySelector('#searchInput');
 const heroList = document.querySelector('.hero__list');
-const loader = document.querySelector('.hero__loader')
+const loader = document.querySelector('.loader');
+const status = document.querySelector('.status');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -11,7 +12,6 @@ form.addEventListener('submit', function (e) {
     fetch(`https://hn.algolia.com/api/v1/search?query=${searchText}`)
         .then(res => res.json())
         .then(data => {
-            loader.style.display = 'none';
             heroList.innerHTML = '';
             data.hits.forEach(elem => {
                 const { author, url, title, created_at} = elem;
@@ -32,6 +32,13 @@ form.addEventListener('submit', function (e) {
                 </li>
                 `;
             });
+
+        })
+        .catch(e => {
+            status.textContent = 'Помилка, перезавантжате сторінку і спробуйте ще раз';
+        })
+        .finally(() => {
+            loader.style.display = 'none';
             heroList.classList.add('hero__list_active');
             this.style.display = 'flex';
         });

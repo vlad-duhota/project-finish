@@ -99,6 +99,52 @@ const toInput = document.querySelector('#toInput');
 const input = document.querySelector('.drop-zone__input');
 const loader = document.querySelector('.loader');
 
+let token = '';
+
+if (localStorage.getItem('token')) {
+  token = localStorage.getItem('token');
+}
+
+let tokenRequestCount = 0;
+
+const makeConvertation = function (fromFormat, toFormat, formData) {
+  axios(
+    `https://v2.convertapi.com/convert/${fromFormat}/to/${toFormat}?Token=${token}`,
+    {
+      method: 'POST',
+      data: formData,
+    }
+  )
+    .then((data) => {
+      const imgCode = data.data.Files[0].FileData;
+      const img = document.querySelector('#img');
+      const link = document.querySelector('#link');
+      img.src = `data:image/${toInput.value};base64,` + imgCode;
+      link.style.display = 'block';
+      img.style.display = 'block';
+      link.href = `data:image/${toInput.value};base64,` + imgCode;
+      loader.style.display = 'none';
+      convertedContainer.style.display = 'block';
+      tokenRequestCount = 0;
+    })
+    .catch((error) => {
+      console.dir(error);
+      tokenRequestCount++;
+      if (error.response.status === 401 && tokenRequestCount <= 5) {
+        axios(
+          `https://v2.convertapi.com/token/create?Secret=wTJsousUGCdk9mQv&RequestCount=100&Lifetime=10000`,
+          {
+            method: 'POST',
+          }
+        ).then((tokenRes) => {
+          token = tokenRes.data.Tokens[0].Id;
+          localStorage.setItem('token', token);
+          makeConvertation(fromFormat, toFormat, formData);
+        });
+      } //відобразити помилку
+    });
+};
+
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   const file = input.files[0];
@@ -108,22 +154,7 @@ form.addEventListener('submit', function (e) {
   const formData = new FormData(e.target);
   dropControls.style.display = 'none';
   loader.style.display = 'block';
-
-  axios(
-    `https://v2.convertapi.com/convert/${format}/to/${toInput.value}?Token=D0gzvl0j`,
-    {
-      method: 'POST',
-      data: formData,
-    }
-  ).then((data) => {
-    const imgCode = data.data.Files[0].FileData;
-    const img = document.querySelector('#img');
-    const link = document.querySelector('#link');
-    img.src = `data:image/${toInput.value};base64,` + imgCode;
-    link.style.display = 'block';
-    img.style.display = 'block';
-    link.href = `data:image/${toInput.value};base64,` + imgCode;
-    loader.style.display = 'none';
-    convertedContainer.style.display = 'block';
-  });
+  makeConvertation(format, toInput.value, formData);
 });
+
+// додати кнопку яка оновлює сторінку

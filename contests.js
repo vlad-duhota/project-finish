@@ -1,7 +1,8 @@
 const list = document.querySelector('.contests__list');
 const btn1 = document.querySelector('.contests__btn_1');
 const btn2 = document.querySelector('.contests__btn_2');
-const loader = document.querySelector('.contests__loader');
+const loader = document.querySelector('.loader');
+const status = document.querySelector('.status');
 let itemsQuantity = 12;
 let itemsStart = 0;
 let data = [];
@@ -10,6 +11,11 @@ fetch('https://kontests.net/api/v1/all')
     .then(res => res.json())
     .then(res => {
         data = res;
+    })
+    .catch(e => {
+        status.textContent = 'Помилка, перезавантжате сторінку і спробуйте ще раз';
+    })
+    .finally(() => {
         loader.style.display = 'none';
         renderItems();
         list.classList.add('contests__list_active');

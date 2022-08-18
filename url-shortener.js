@@ -2,6 +2,7 @@
 
 const userUrl = document.querySelector('#url-field');
 const urlFormId = document.querySelector('#url-form-id');
+const status = document.querySelector('.status');
 
 const urlShortenerContainer = document.querySelector(
   '.url-shortener__container'
@@ -35,7 +36,7 @@ urlFormId.addEventListener('submit', (e) => {
       urlShortenedContainer.style.display = 'block';
       urlShortenedInput.value = data.shortUrl;
     })
-    .catch((err) => console.error(err));
+    .catch((err) => status.textContent = 'Помилка, спробуйте ще раз');
 });
 
 // copy

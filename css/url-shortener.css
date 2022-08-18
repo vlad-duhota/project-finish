@@ -17,6 +17,22 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
+.status{
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+}
+
+.repeat-btn{
+  display: block; 
+  background-color: #65667C;
+  border-radius: 15px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .url-shortener {
   padding: 0 15px;
@@ -72,7 +88,6 @@ body {
 
 .url-shortener__container {
   max-width: 800px;
-  height: 250px;
   margin: 0 auto;
   background-color: #444455;
   border-radius: 15px;
@@ -97,6 +112,7 @@ body {
 .url-shortener__container .url-shortener__form .url-shortener__title {
   font-family: 'Roboto', sans-serif;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {

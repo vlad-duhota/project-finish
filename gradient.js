@@ -10,6 +10,8 @@ http.onreadystatechange = function () {
         palette = JSON.parse(http.responseText).result;
         checkPalette();
         status.textContent = 'Успіх!';
+    } else {
+        status.textContent = 'Помилка';
     }
 }
 
