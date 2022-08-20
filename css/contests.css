@@ -53,6 +53,10 @@
   display: flex;
   flex-direction: column;
   color: #fff;
+  transition: background 0.3s;
+}
+.contests__item:hover {
+  background: #3b3b48;
 }
 .contests__item-title {
   margin-bottom: 10px;
@@ -88,6 +92,13 @@
   transform: translateX(-50%);
   bottom: 105px;
   display: flex;
+}
+@media (max-width: 1550px) {
+  .contests__controls {
+    position: static;
+    transform: translateX(0);
+    margin-top: 30px;
+  }
 }
 .contests__btn {
   cursor: pointer;

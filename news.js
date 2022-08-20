@@ -9,10 +9,12 @@ form.addEventListener('submit', function (e) {
     const searchText = input.value;
     this.style.display = 'none';
     loader.style.display = 'block';
+    status.textContent = '';
     fetch(`https://hn.algolia.com/api/v1/search?query=${searchText}`)
         .then(res => res.json())
         .then(data => {
             heroList.innerHTML = '';
+            if(data.hits.length > 0){
             data.hits.forEach(elem => {
                 const { author, url, title, created_at} = elem;
                 const date = new Date(created_at);
@@ -25,13 +27,16 @@ form.addEventListener('submit', function (e) {
                 const parsedDate = date.getDate() + '.' + months + '.' + date.getFullYear();
                 heroList.innerHTML += ` 
                 <li class="hero__item">
-                    <a href="${url}" class="hero__item-link">
+                    <a href="${url}" target="blank" class="hero__item-link">
                         <p class="hero__item-author">${author} - ${parsedDate}</p>
                         <h3 class="hero__item-title">${title}</h3>
                     </a>
                 </li>
                 `;
             });
+        } else{
+            status.textContent = 'Результатів не знайдено';
+        }
 
         })
         .catch(e => {

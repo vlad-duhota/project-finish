@@ -17,6 +17,18 @@ body {
   margin: 0 auto;
 }
 
+.repeat-btn{
+  display: block; 
+  background-color: #445;
+  border-radius: 15px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto 0;
+}
+
 .drop {
   padding: 0 15px;
   min-height: 100vh;

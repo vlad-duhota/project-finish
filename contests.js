@@ -85,7 +85,7 @@ function renderItems() {
                 endMinutes  = '00';
             }
             const endDate = endDays + '.' + endMonths + '.' + end.getFullYear() + ' / ' + end.getHours() + ':' + endMinutes;
-            list.innerHTML += `<li class="contests__item"><h3 class="contests__item-title">${name}</h3><a href="${url}" class="contests__item-site">${site}</a><p class="contests__item-duration">${durationText}</p><div class="contests__item-time"><p class="contests__item-start">Початок - ${startDate}</p><p class="contests__item-end">Кінець - ${endDate}</p></div></li>`
+            list.innerHTML += `<li class="contests__item"><h3 class="contests__item-title">${name}</h3><a href="${url}" target="blank" class="contests__item-site">${site}</a><p class="contests__item-duration">${durationText}</p><div class="contests__item-time"><p class="contests__item-start">Початок - ${startDate}</p><p class="contests__item-end">Кінець - ${endDate}</p></div></li>`
         }
     } else{
         list.innerHTML = '';

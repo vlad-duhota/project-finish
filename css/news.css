@@ -53,6 +53,7 @@
   padding: 15px;
   border-radius: 15px;
   background: #445;
+  transition: background 0.3s;
 }
 .hero__item-link {
   color: #fff;
@@ -66,6 +67,9 @@
 }
 .hero__item-title {
   margin-top: auto;
+}
+.hero__item:hover {
+  background: #3b3b48;
 }
 .hero form {
   padding: 15px;
@@ -82,6 +86,9 @@
 .hero form button {
   background: none;
   border: none;
+}
+.hero form button {
+  cursor: pointer;
 }
 .hero form input {
   flex: 1 1 100%;

@@ -3,6 +3,7 @@
 const userUrl = document.querySelector('#url-field');
 const urlFormId = document.querySelector('#url-form-id');
 const status = document.querySelector('.status');
+const loader = document.querySelector('.loader');
 
 const urlShortenerContainer = document.querySelector(
   '.url-shortener__container'
@@ -17,6 +18,7 @@ urlFormId.addEventListener('submit', (e) => {
   e.preventDefault();
 
   urlShortenerContainer.style.display = 'none';
+  loader.style.display = 'block';
 
   const options = {
     method: 'POST',
@@ -36,7 +38,10 @@ urlFormId.addEventListener('submit', (e) => {
       urlShortenedContainer.style.display = 'block';
       urlShortenedInput.value = data.shortUrl;
     })
-    .catch((err) => status.textContent = 'Помилка, спробуйте ще раз');
+    .catch((err) => status.textContent = 'Помилка, спробуйте ще раз')
+    .finally(() => {
+      loader.style.display = 'none';
+    });
 });
 
 // copy
